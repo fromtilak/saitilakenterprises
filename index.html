@@ -1,0 +1,1859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sai Tilak Enterprises — eCommerce, Websites & Writing Services</title>
+  <meta name="description" content="Practical online services for sellers, founders, and growing businesses. eCommerce listing support, technical writing, website setup, and digital operations from Ambernath, Maharashtra.">
+  <meta name="keywords" content="Amazon listing support, eCommerce services India, technical writing, website setup, Meesho seller support, catalog management, Ambernath">
+  <meta property="og:title" content="Sai Tilak Enterprises — eCommerce, Websites & Writing">
+  <meta property="og:description" content="Practical online services for businesses that need work done properly.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Rajdhani:wght@500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       DESIGN TOKENS
+    ============================================================ */
+    :root {
+      --navy:       #0B1F3A;
+      --navy-mid:   #122848;
+      --navy-light: #1A3560;
+      --teal:       #1A8F8F;
+      --teal-light: #2BAAAA;
+      --teal-pale:  #E8F5F5;
+      --amber:      #E6A817;
+      --amber-pale: #FEF6E4;
+      --off-white:  #F7F6F2;
+      --white:      #FFFFFF;
+      --ink:        #1C1C1C;
+      --ink-mid:    #3D3D3D;
+      --ink-soft:   #6B6B6B;
+      --rule:       #E2E0DA;
+      --rule-dark:  rgba(255,255,255,0.08);
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-ui:      'Rajdhani', sans-serif;
+      --font-body:    'DM Sans', sans-serif;
+
+      --max-w: 1080px;
+      --section-pad: 100px 40px;
+      --radius: 3px;
+      --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ============================================================
+       ANIMATIONS
+    ============================================================ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes slideRight {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+    @keyframes pulse-amber {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.6; }
+    }
+
+    .anim-fade-up {
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.22s; }
+    .delay-3 { animation-delay: 0.34s; }
+    .delay-4 { animation-delay: 0.46s; }
+    .delay-5 { animation-delay: 0.58s; }
+
+    /* ============================================================
+       NAV
+    ============================================================ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(11, 31, 58, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule-dark);
+      transition: background var(--transition);
+    }
+
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 40px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    /* SVG Logo in nav */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .nav-logo-mark svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .nav-logo-text {
+      line-height: 1.1;
+    }
+
+    .nav-logo-name {
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 17px;
+      color: #fff;
+      letter-spacing: 0.03em;
+      display: block;
+    }
+
+    .nav-logo-name span { color: var(--teal-light); }
+
+    .nav-logo-sub {
+      font-family: var(--font-body);
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--amber);
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.03em;
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    .nav-cta {
+      background: var(--teal) !important;
+      color: #fff !important;
+      padding: 8px 20px;
+      border-radius: var(--radius);
+      font-size: 12px !important;
+      letter-spacing: 0.08em !important;
+      text-transform: uppercase;
+      font-weight: 600 !important;
+      transition: background var(--transition) !important;
+    }
+
+    .nav-cta:hover { background: var(--teal-light) !important; }
+
+    /* Hamburger */
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-burger span {
+      width: 24px; height: 2px;
+      background: rgba(255,255,255,0.7);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    #home {
+      background: var(--navy);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 64px;
+    }
+
+    /* Geometric background pattern */
+    #home::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(26,143,143,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,143,143,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* Teal glow blob */
+    #home::after {
+      content: '';
+      position: absolute;
+      top: -20%; right: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(26,143,143,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* Amber accent line at top */
+    .hero-amber-bar {
+      position: absolute;
+      top: 64px; left: 0;
+      width: 160px; height: 3px;
+      background: var(--amber);
+      transform-origin: left;
+      animation: slideRight 0.9s 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      transform: scaleX(0);
+    }
+
+    .hero-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 80px 40px 100px;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 32px; height: 1px;
+      background: var(--amber);
+      display: block;
+    }
+
+    .hero-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 5vw, 58px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 28px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-h1 em {
+      font-style: normal;
+      color: var(--teal-light);
+    }
+
+    .hero-body {
+      font-size: 16px;
+      color: rgba(255,255,255,0.6);
+      max-width: 480px;
+      line-height: 1.75;
+      margin-bottom: 44px;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background var(--transition), transform var(--transition);
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background: var(--teal-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.75);
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: border-color var(--transition), color var(--transition);
+      display: inline-block;
+    }
+    .btn-ghost:hover {
+      border-color: rgba(255,255,255,0.5);
+      color: #fff;
+    }
+
+    /* Hero right: stat card panel */
+    .hero-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      transition: background var(--transition);
+    }
+    .stat-card:hover { background: rgba(255,255,255,0.07); }
+
+    .stat-card:first-child {
+      border-left: 3px solid var(--teal);
+    }
+    .stat-card:nth-child(2) {
+      border-left: 3px solid var(--amber);
+    }
+    .stat-card:nth-child(3) {
+      border-left: 3px solid rgba(255,255,255,0.2);
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 38px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.06em;
+    }
+
+    /* ============================================================
+       SECTION COMMON
+    ============================================================ */
+    .section-eyebrow {
+      font-family: var(--font-body);
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-eyebrow::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+      max-width: 60px;
+    }
+
+    .section-h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .section-h2.light { color: #fff; }
+
+    .section-lead {
+      font-size: 15px;
+      color: var(--ink-soft);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-top: 12px;
+    }
+    .section-lead.light { color: rgba(255,255,255,0.55); }
+
+    /* ============================================================
+       PROOF STRIP (between hero and services)
+    ============================================================ */
+    #proof {
+      background: var(--off-white);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 20px 40px;
+    }
+
+    .proof-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .proof-item {
+      flex: 1;
+      min-width: 200px;
+      padding: 16px 28px;
+      border-right: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .proof-item:last-child { border-right: none; }
+
+    .proof-icon {
+      width: 36px; height: 36px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 16px;
+    }
+
+    .proof-text strong {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.01em;
+    }
+    .proof-text span {
+      font-size: 12px;
+      color: var(--ink-soft);
+    }
+
+    /* ============================================================
+       SERVICES
+    ============================================================ */
+    #services {
+      padding: var(--section-pad);
+      background: var(--white);
+    }
+
+    .services-head {
+      margin-bottom: 60px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .service-card {
+      border: 1px solid var(--rule);
+      padding: 36px 32px;
+      position: relative;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--teal);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .service-card:hover {
+      border-color: var(--teal);
+      box-shadow: 0 4px 32px rgba(26,143,143,0.08);
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      width: 48px; height: 48px;
+      background: var(--teal-pale);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .service-number {
+      position: absolute;
+      top: 28px; right: 28px;
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--off-white);
+      line-height: 1;
+      user-select: none;
+    }
+
+    .service-name {
+      font-family: var(--font-ui);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.01em;
+      margin-bottom: 10px;
+    }
+
+    .service-desc {
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .service-price {
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--teal);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ============================================================
+       PROOF / TESTIMONIAL
+    ============================================================ */
+    #trust {
+      background: var(--navy);
+      padding: var(--section-pad);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #trust::before {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(26,143,143,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .trust-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .trust-left .section-eyebrow { color: var(--amber); }
+    .trust-left .section-eyebrow::after { background: rgba(255,255,255,0.1); }
+
+    .credential-list {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .credential {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+    }
+
+    .credential-dot {
+      width: 8px; height: 8px;
+      background: var(--teal-light);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 7px;
+      animation: pulse-amber 2.5s infinite;
+    }
+
+    .credential-text {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+    }
+
+    .credential-text strong {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    /* Testimonial / quote card */
+    .quote-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 40px;
+      position: relative;
+    }
+
+    .quote-mark {
+      font-family: var(--font-display);
+      font-size: 80px;
+      line-height: 0.5;
+      color: var(--teal);
+      opacity: 0.4;
+      position: absolute;
+      top: 28px; left: 32px;
+      pointer-events: none;
+    }
+
+    .quote-text {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.5;
+      margin-top: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-attr {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.06em;
+    }
+
+    .quote-attr strong {
+      display: block;
+      color: rgba(255,255,255,0.7);
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    /* Metrics row below quote */
+    .trust-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 2px;
+    }
+
+    .trust-metric {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .trust-metric-n {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--amber);
+      line-height: 1;
+    }
+
+    .trust-metric-l {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 4px;
+    }
+
+    /* ============================================================
+       PROCESS
+    ============================================================ */
+    #process {
+      padding: var(--section-pad);
+      background: var(--off-white);
+    }
+
+    .process-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .process-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 60px;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--teal) 0%, var(--rule) 100%);
+      z-index: 0;
+    }
+
+    .process-step {
+      padding: 0 20px 0 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-num {
+      width: 56px; height: 56px;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      position: relative;
+      border: 3px solid var(--off-white);
+      box-shadow: 0 0 0 2px var(--teal);
+    }
+
+    .step-title {
+      font-family: var(--font-ui);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    /* ============================================================
+       ABOUT
+    ============================================================ */
+    #about {
+      padding: var(--section-pad);
+      background: var(--white);
+    }
+
+    .about-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 28px;
+    }
+
+    .tag {
+      padding: 6px 14px;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      font-size: 12px;
+      color: var(--ink-mid);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .tag:hover { border-color: var(--teal); color: var(--teal); }
+
+    .about-features {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .about-feat {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .feat-check {
+      width: 20px; height: 20px;
+      background: var(--teal-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .feat-check::after {
+      content: '✓';
+      font-size: 11px;
+      color: var(--teal);
+      font-weight: 700;
+    }
+
+    .feat-text {
+      font-size: 14px;
+      color: var(--ink-mid);
+      line-height: 1.6;
+    }
+
+    .feat-text strong {
+      color: var(--navy);
+      font-weight: 600;
+      display: block;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    /* ============================================================
+       PRICING
+    ============================================================ */
+    #pricing {
+      padding: var(--section-pad);
+      background: var(--off-white);
+    }
+
+    .pricing-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .pricing-head {
+      margin-bottom: 50px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .pricing-card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      padding: 40px 36px;
+      position: relative;
+      transition: box-shadow var(--transition);
+    }
+
+    .pricing-card.featured {
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .pricing-card:hover {
+      box-shadow: 0 8px 40px rgba(11,31,58,0.1);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -1px; right: 28px;
+      background: var(--amber);
+      color: var(--navy);
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+    }
+
+    .pricing-category {
+      font-family: var(--font-body);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    .pricing-card.featured .pricing-category { color: var(--teal-light); }
+
+    .pricing-name {
+      font-family: var(--font-ui);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .pricing-card.featured .pricing-name { color: #fff; }
+
+    .pricing-amount {
+      font-family: var(--font-display);
+      font-size: 44px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      margin: 20px 0 4px;
+    }
+    .pricing-card.featured .pricing-amount { color: var(--amber); }
+
+    .pricing-unit {
+      font-size: 12px;
+      color: var(--ink-soft);
+      margin-bottom: 28px;
+    }
+    .pricing-card.featured .pricing-unit { color: rgba(255,255,255,0.45); }
+
+    .pricing-features {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .pricing-feat {
+      font-size: 13px;
+      color: var(--ink-mid);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+    .pricing-card.featured .pricing-feat { color: rgba(255,255,255,0.65); }
+
+    .pricing-feat::before {
+      content: '→';
+      color: var(--teal);
+      font-size: 12px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .pricing-card.featured .pricing-feat::before { color: var(--teal-light); }
+
+    .btn-pricing {
+      width: 100%;
+      padding: 14px;
+      text-align: center;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--navy);
+      color: var(--navy);
+      display: block;
+      transition: background var(--transition), color var(--transition);
+    }
+    .btn-pricing:hover {
+      background: var(--navy);
+      color: #fff;
+    }
+    .pricing-card.featured .btn-pricing {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: #fff;
+    }
+    .pricing-card.featured .btn-pricing:hover {
+      background: var(--teal-light);
+      border-color: var(--teal-light);
+    }
+
+    /* ============================================================
+       CONTACT
+    ============================================================ */
+    #contact {
+      padding: var(--section-pad);
+      background: var(--white);
+    }
+
+    .contact-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-channels {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .contact-channel {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      transition: border-color var(--transition), background var(--transition);
+      text-decoration: none;
+      color: inherit;
+    }
+    .contact-channel:hover {
+      border-color: var(--teal);
+      background: var(--teal-pale);
+    }
+
+    .channel-icon {
+      width: 42px; height: 42px;
+      background: var(--navy);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .channel-text strong {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .channel-text span {
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+
+    .contact-guide {
+      background: var(--off-white);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      padding: 36px;
+    }
+
+    .contact-guide-title {
+      font-family: var(--font-ui);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .guide-item {
+      margin-bottom: 20px;
+    }
+
+    .guide-item-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 6px;
+    }
+
+    .guide-item-text {
+      font-size: 13px;
+      color: var(--ink-mid);
+      line-height: 1.65;
+    }
+
+    .contact-cta-block {
+      margin-top: 28px;
+      padding-top: 28px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .wa-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #25D366;
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background var(--transition), transform var(--transition);
+      text-decoration: none;
+    }
+    .wa-button:hover {
+      background: #1fba5a;
+      transform: translateY(-2px);
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 60px 40px 40px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+    }
+
+    .footer-brand-name {
+      font-family: var(--font-ui);
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin: 16px 0 8px;
+    }
+
+    .footer-brand-desc {
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 280px;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-body);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      transition: color var(--transition);
+    }
+    .footer-links a:hover { color: #fff; }
+
+    .footer-bottom {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 20px 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom p { font-size: 12px; }
+
+    .footer-amber-rule {
+      height: 3px;
+      background: linear-gradient(90deg, var(--amber) 0%, var(--teal) 50%, transparent 100%);
+    }
+
+    /* ============================================================
+       MOBILE
+    ============================================================ */
+    @media (max-width: 900px) {
+      :root { --section-pad: 70px 24px; }
+
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 64px; left: 0; right: 0;
+        background: var(--navy);
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid var(--rule-dark);
+      }
+      .nav-burger { display: flex; }
+      .container { padding: 0 24px; }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding: 60px 24px 80px;
+      }
+      .hero-stats { flex-direction: row; flex-wrap: wrap; }
+      .hero-stats .stat-card { flex: 1; min-width: 160px; }
+
+      .proof-item { min-width: 160px; }
+
+      .services-grid { grid-template-columns: 1fr; }
+
+      .trust-inner { grid-template-columns: 1fr; gap: 50px; }
+
+      .process-head { grid-template-columns: 1fr; gap: 20px; }
+      .process-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+      .process-steps::before { display: none; }
+
+      .about-inner { grid-template-columns: 1fr; gap: 50px; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; gap: 50px; }
+
+      .footer-main { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 500px) {
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-ghost { text-align: center; }
+      .process-steps { grid-template-columns: 1fr; }
+      .trust-metrics { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+============================================================ -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <div class="nav-logo-mark">
+        <!-- STE Mark — inline SVG, no external dependency -->
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 2H30L38 10V38H2V2Z" fill="#122848"/>
+          <rect x="2" y="2" width="28" height="5" fill="#1A8F8F"/>
+          <path d="M30 2L38 10H30V2Z" fill="#1A8F8F"/>
+          <rect x="8" y="25" width="18" height="3" rx="0.5" fill="#E6A817"/>
+          <text x="6" y="22" font-family="Rajdhani, sans-serif" font-weight="700" font-size="15" fill="white">STE</text>
+        </svg>
+      </div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Sai <span>Tilak</span></span>
+        <span class="nav-logo-sub">Enterprises</span>
+      </div>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+
+    <div class="nav-burger" id="burger" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section id="home">
+  <div class="hero-amber-bar"></div>
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow anim-fade-up delay-1">Ambernath, Maharashtra · Remote-Ready</p>
+      <h1 class="hero-h1 anim-fade-up delay-2">
+        Online business work,<br><em>done properly.</em>
+      </h1>
+      <p class="hero-body anim-fade-up delay-3">
+        Sai Tilak Enterprises handles eCommerce listings, Amazon ads support, technical writing, website setup, and digital operations — for sellers, founders, and small businesses who need reliable execution without agency overhead.
+      </p>
+      <div class="hero-actions anim-fade-up delay-4">
+        <a href="#contact" class="btn-primary">Start a Project</a>
+        <a href="#services" class="btn-ghost">View Services</a>
+      </div>
+    </div>
+
+    <div class="hero-stats anim-fade-up delay-5">
+      <div class="stat-card">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Years in eCommerce operations</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">200+</div>
+        <div class="stat-label">Amazon ASINs optimized</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Focused service areas, no filler</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PROOF STRIP
+============================================================ -->
+<div id="proof">
+  <div class="proof-inner">
+    <div class="proof-item">
+      <div class="proof-icon">🛒</div>
+      <div class="proof-text">
+        <strong>Amazon · Flipkart · Meesho</strong>
+        <span>Marketplace listing support</span>
+      </div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-icon">📊</div>
+      <div class="proof-text">
+        <strong>SP · SB · SD Ads</strong>
+        <span>Sponsored ads campaign support</span>
+      </div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-icon">✍️</div>
+      <div class="proof-text">
+        <strong>Technical Writing</strong>
+        <span>SOPs, product docs, business copy</span>
+      </div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-icon">🌐</div>
+      <div class="proof-text">
+        <strong>Website Setup</strong>
+        <span>WordPress · Landing pages · SEO</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     SERVICES
+============================================================ -->
+<section id="services">
+  <div class="container">
+    <div class="services-head">
+      <p class="section-eyebrow">What We Do</p>
+      <h2 class="section-h2">A focused service stack<br>for modern businesses.</h2>
+      <p class="section-lead">Six areas of execution — eCommerce, ads, writing, websites, data, and digital ops — built to help you move faster without hiring full-time.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-number">01</div>
+        <div class="service-icon">🛒</div>
+        <div class="service-name">eCommerce Listing Support</div>
+        <p class="service-desc">Product listings, catalog uploads, flat file handling, variation setup, and marketplace issue resolution for Amazon, Flipkart, and Meesho sellers.</p>
+        <div class="service-price">From ₹500 per listing</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <div class="service-icon">📢</div>
+        <div class="service-name">Sponsored Ads Support</div>
+        <p class="service-desc">Campaign setup, keyword research, bid management, search term analysis, and performance reporting for SP, SB, and SD campaigns. Structured execution, not guesswork.</p>
+        <div class="service-price">From ₹3,000/month</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">03</div>
+        <div class="service-icon">✍️</div>
+        <div class="service-name">Technical Writing</div>
+        <p class="service-desc">SOPs, process documentation, knowledge base articles, internal guides, and structured writing for teams that need clear, usable documentation — not filler.</p>
+        <div class="service-price">From ₹1,000 per assignment</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">04</div>
+        <div class="service-icon">📝</div>
+        <div class="service-name">Content & Product Writing</div>
+        <p class="service-desc">Product descriptions, website copy, service pages, FAQs, and business profiles. Conversion-focused writing that communicates clearly and sells without being pushy.</p>
+        <div class="service-price">From ₹500 per piece</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">05</div>
+        <div class="service-icon">🌐</div>
+        <div class="service-name">Website Setup</div>
+        <p class="service-desc">Business websites, landing pages, and WordPress setup with clean structure, proper messaging, and practical design. No bloated themes, no unnecessary plugins.</p>
+        <div class="service-price">From ₹3,000 one-time</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">06</div>
+        <div class="service-icon">📊</div>
+        <div class="service-name">Excel, Data & Digital Support</div>
+        <p class="service-desc">MIS dashboards, data cleanup, structured reporting sheets, Google Business Profile setup, and small-business digital operations support in Excel and Google Sheets.</p>
+        <div class="service-price">From ₹500 per project</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TRUST / PROOF SECTION
+============================================================ -->
+<section id="trust">
+  <div class="trust-inner">
+
+    <div class="trust-left">
+      <p class="section-eyebrow">Why Choose Us</p>
+      <h2 class="section-h2 light">Execution-first. Not creative vibes and half-finished promises.</h2>
+      <p class="section-lead light" style="margin-bottom: 0;">The work is grounded in real marketplace operations, not templated output. Here is what backs it.</p>
+
+      <div class="credential-list">
+        <div class="credential">
+          <div class="credential-dot"></div>
+          <p class="credential-text"><strong>Amazon Catalog & Ads Operations (3.5 years):</strong> Hands-on SP/SB/SD campaign management, flat file uploads, ASIN troubleshooting, and bulk listing operations at scale.</p>
+        </div>
+        <div class="credential">
+          <div class="credential-dot"></div>
+          <p class="credential-text"><strong>Data and Reporting:</strong> AWS QuickSight, Power BI, Advanced Excel, and SQL — used for real business reporting, not just listed on a resume.</p>
+        </div>
+        <div class="credential">
+          <div class="credential-dot"></div>
+          <p class="credential-text"><strong>Active Seller Context:</strong> Running NavPeth.com on Shopify and listing on Meesho — meaning the advice comes from someone who is also doing the work, not just consulting on it.</p>
+        </div>
+        <div class="credential">
+          <div class="credential-dot"></div>
+          <p class="credential-text"><strong>Remote-delivery model:</strong> Structured, async-friendly communication. Clear scope before work starts. No surprise scope creep.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="trust-right">
+      <div class="quote-card">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">
+          Listings were cleaned up, variations mapped correctly, and the flat file issues we had been ignoring for months were sorted in one go. Clear communication throughout.
+        </p>
+        <div class="quote-attr">
+          <strong>D2C Seller, Amazon India</strong>
+          eCommerce Listing Support · Home & Kitchen category
+        </div>
+      </div>
+
+      <div class="trust-metrics">
+        <div class="trust-metric">
+          <div class="trust-metric-n">200+</div>
+          <div class="trust-metric-l">ASINs worked on</div>
+        </div>
+        <div class="trust-metric">
+          <div class="trust-metric-n">₹500</div>
+          <div class="trust-metric-l">Starting price — no inflated minimums</div>
+        </div>
+        <div class="trust-metric">
+          <div class="trust-metric-n">48h</div>
+          <div class="trust-metric-l">Typical turnaround for small tasks</div>
+        </div>
+        <div class="trust-metric">
+          <div class="trust-metric-n">3+</div>
+          <div class="trust-metric-l">Active platforms served</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PROCESS
+============================================================ -->
+<section id="process">
+  <div class="process-inner">
+    <div class="process-head">
+      <div>
+        <p class="section-eyebrow">How It Works</p>
+        <h2 class="section-h2">Simple workflow.<br>No pointless calls.</h2>
+      </div>
+      <p class="section-lead">Rough input is fine. Send your requirement and get a clear scope and quote back — before anything starts.</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <div class="step-title">Send Your Brief</div>
+        <p class="step-desc">Share your requirement by WhatsApp or email — product links, ASINs, website details, writing topic, or whatever the task is. Rough is fine.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <div class="step-title">Scope & Quote</div>
+        <p class="step-desc">The work gets clarified into a defined scope, price, and timeline before anything begins. No surprise charges after the fact.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <div class="step-title">Execution</div>
+        <p class="step-desc">Work starts with relevant progress updates. Revisions are included where specified. No unnecessary back-and-forth or status meetings.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <div class="step-title">Clean Delivery</div>
+        <p class="step-desc">Final files, listings, content, or pages delivered in a format you can use immediately — not a half-finished draft requiring more work from your side.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+<section id="about">
+  <div class="about-inner">
+    <div>
+      <p class="section-eyebrow">About</p>
+      <h2 class="section-h2">Built on operational experience, not just digital enthusiasm.</h2>
+      <p class="section-lead" style="margin-top: 16px;">Sai Tilak Enterprises is a one-person service operation based in Ambernath, Maharashtra — built around the practical skills that come from running real eCommerce workflows, not from watching YouTube tutorials.</p>
+
+      <div class="about-tags">
+        <span class="tag">Amazon Seller Central</span>
+        <span class="tag">Vendor Central</span>
+        <span class="tag">Flat File Uploads</span>
+        <span class="tag">Sponsored Ads</span>
+        <span class="tag">AWS QuickSight</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Advanced Excel</span>
+        <span class="tag">SQL</span>
+        <span class="tag">WordPress</span>
+        <span class="tag">Shopify</span>
+        <span class="tag">Technical Writing</span>
+        <span class="tag">SEO Basics</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="about-features">
+        <div class="about-feat">
+          <div class="feat-check"></div>
+          <div class="feat-text">
+            <strong>Marketplace Listing & Catalog Operations</strong>
+            ASIN creation, variation handling, category mapping, content cleanup, and bulk upload via flat files across Amazon, Flipkart, and Meesho.
+          </div>
+        </div>
+        <div class="about-feat">
+          <div class="feat-check"></div>
+          <div class="feat-text">
+            <strong>Business Data & Reporting</strong>
+            MIS reports, dashboards, Excel-based tools, and structured data support — including the kind of work that actually gets used in weekly reviews.
+          </div>
+        </div>
+        <div class="about-feat">
+          <div class="feat-check"></div>
+          <div class="feat-text">
+            <strong>Writing Backed by Operations Context</strong>
+            Technical writing, SOPs, and product copy grounded in how the work actually runs — not generic templated content.
+          </div>
+        </div>
+        <div class="about-feat">
+          <div class="feat-check"></div>
+          <div class="feat-text">
+            <strong>Clear Scope, Reliable Follow-Through</strong>
+            Projects are scoped before they start. Deliverables are what was agreed. Communication is direct and without unnecessary delays.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PRICING
+============================================================ -->
+<section id="pricing">
+  <div class="pricing-inner">
+    <div class="pricing-head">
+      <p class="section-eyebrow">Pricing</p>
+      <h2 class="section-h2">Simple starting points.<br>Scope determines final price.</h2>
+      <p class="section-lead">No inflated minimums. No agency markup. Pricing scales with complexity and turnaround — these are honest starting anchors.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <div class="pricing-card">
+        <p class="pricing-category">Writing & Content</p>
+        <h3 class="pricing-name">Writing Services</h3>
+        <div class="pricing-amount">₹500<span style="font-size:20px; font-weight:400;">+</span></div>
+        <p class="pricing-unit">per piece / per assignment</p>
+        <ul class="pricing-features">
+          <li class="pricing-feat">Website and service page copy</li>
+          <li class="pricing-feat">Product descriptions and FAQs</li>
+          <li class="pricing-feat">SOPs and process documentation</li>
+          <li class="pricing-feat">Business profiles and structured writing</li>
+          <li class="pricing-feat">Technical writing and knowledge base articles</li>
+        </ul>
+        <a href="#contact" class="btn-pricing">Enquire Now</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Requested</div>
+        <p class="pricing-category">Seller Support</p>
+        <h3 class="pricing-name">eCommerce & Ads</h3>
+        <div class="pricing-amount">₹500<span style="font-size:20px; font-weight:400; color: rgba(255,255,255,0.4);">+</span></div>
+        <p class="pricing-unit">per listing / ₹3,000+ per month for ads</p>
+        <ul class="pricing-features">
+          <li class="pricing-feat">Amazon, Flipkart, Meesho listing creation</li>
+          <li class="pricing-feat">Variation setup and catalog fixes</li>
+          <li class="pricing-feat">SP/SB/SD campaign setup and tuning</li>
+          <li class="pricing-feat">Search term and bid reporting</li>
+          <li class="pricing-feat">Ongoing execution available</li>
+        </ul>
+        <a href="#contact" class="btn-pricing">Start Seller Support</a>
+      </div>
+
+      <div class="pricing-card">
+        <p class="pricing-category">Website & Digital</p>
+        <h3 class="pricing-name">Digital Setup</h3>
+        <div class="pricing-amount">₹2,000<span style="font-size:20px; font-weight:400;">+</span></div>
+        <p class="pricing-unit">one-time / project basis</p>
+        <ul class="pricing-features">
+          <li class="pricing-feat">Business website and landing pages</li>
+          <li class="pricing-feat">WordPress setup with proper structure</li>
+          <li class="pricing-feat">Google Business Profile setup</li>
+          <li class="pricing-feat">Excel dashboards and MIS reports</li>
+          <li class="pricing-feat">Digital ops support for small businesses</li>
+        </ul>
+        <a href="#contact" class="btn-pricing">Get a Quote</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONTACT
+============================================================ -->
+<section id="contact">
+  <div class="contact-inner">
+    <div>
+      <p class="section-eyebrow">Contact</p>
+      <h2 class="section-h2">Let's discuss your requirement.</h2>
+      <p class="section-lead">Share your project details and get a clear scope and price back — usually within 24 hours.</p>
+
+      <div class="contact-channels">
+        <a href="https://wa.me/919272403788" class="contact-channel" target="_blank" rel="noopener">
+          <div class="channel-icon">💬</div>
+          <div class="channel-text">
+            <strong>WhatsApp (Fastest)</strong>
+            <span>+91 92724 03788 — message directly</span>
+          </div>
+        </a>
+        <a href="mailto:fromtilak@gmail.com" class="contact-channel">
+          <div class="channel-icon">✉️</div>
+          <div class="channel-text">
+            <strong>Email</strong>
+            <span>fromtilak@gmail.com</span>
+          </div>
+        </a>
+        <div class="contact-channel" style="cursor: default;">
+          <div class="channel-icon">📍</div>
+          <div class="channel-text">
+            <strong>Location</strong>
+            <span>Ambernath, Maharashtra — serving clients remotely across India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-guide">
+      <div class="contact-guide-title">What to include in your message</div>
+
+      <div class="guide-item">
+        <div class="guide-item-label">For eCommerce Sellers</div>
+        <div class="guide-item-text">Share product links, ASINs, issue details, or the category you are selling in. Mention if you need listing creation, catalog fixes, or ads support.</div>
+      </div>
+
+      <div class="guide-item">
+        <div class="guide-item-label">For Website Projects</div>
+        <div class="guide-item-text">Share your business name, what services you offer, which pages you need, and any reference sites you like. WordPress preferred but not required.</div>
+      </div>
+
+      <div class="guide-item">
+        <div class="guide-item-label">For Writing Projects</div>
+        <div class="guide-item-text">Share the topic, target audience, approximate word count or page count, and any deadline. A rough draft or notes is helpful but not required.</div>
+      </div>
+
+      <div class="guide-item" style="margin-bottom: 0;">
+        <div class="guide-item-label">For Excel / Data Work</div>
+        <div class="guide-item-text">Describe what you currently have (a messy sheet, raw data, nothing yet) and what output you need — a dashboard, a cleaned file, a reporting template.</div>
+      </div>
+
+      <div class="contact-cta-block">
+        <a href="https://wa.me/919272403788?text=Hi%2C%20I%20found%20Sai%20Tilak%20Enterprises%20and%20wanted%20to%20discuss%20a%20project." class="wa-button" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Message on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+  <div class="footer-amber-rule"></div>
+  <div class="footer-main">
+    <div>
+      <!-- Footer logo -->
+      <div style="display:flex; align-items:center; gap:12px;">
+        <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 2H30L38 10V38H2V2Z" fill="#122848"/>
+          <rect x="2" y="2" width="28" height="5" fill="#1A8F8F"/>
+          <path d="M30 2L38 10H30V2Z" fill="#1A8F8F"/>
+          <rect x="8" y="25" width="18" height="3" rx="0.5" fill="#E6A817"/>
+          <text x="6" y="22" font-family="Rajdhani, sans-serif" font-weight="700" font-size="15" fill="white">STE</text>
+        </svg>
+        <div>
+          <div class="footer-brand-name">Sai Tilak Enterprises</div>
+        </div>
+      </div>
+      <p class="footer-brand-desc" style="margin-top: 16px;">eCommerce support, Amazon ads, technical writing, websites, and digital operations for sellers, founders, and growing businesses across India.</p>
+    </div>
+
+    <div>
+      <p class="footer-col-title">Services</p>
+      <ul class="footer-links">
+        <li><a href="#services">eCommerce Listings</a></li>
+        <li><a href="#services">Sponsored Ads Support</a></li>
+        <li><a href="#services">Technical Writing</a></li>
+        <li><a href="#services">Content Writing</a></li>
+        <li><a href="#services">Website Setup</a></li>
+        <li><a href="#services">Excel & Data Support</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="footer-col-title">Contact</p>
+      <ul class="footer-links">
+        <li><a href="https://wa.me/919272403788" target="_blank" rel="noopener">WhatsApp: +91 92724 03788</a></li>
+        <li><a href="mailto:fromtilak@gmail.com">fromtilak@gmail.com</a></li>
+        <li style="color: rgba(255,255,255,0.3); font-size:13px; cursor:default;">Ambernath, Maharashtra</li>
+        <li style="color: rgba(255,255,255,0.3); font-size:13px; cursor:default; margin-top: 8px;">Remote delivery · India-wide</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Sai Tilak Enterprises. All rights reserved.</p>
+    <p style="color: rgba(255,255,255,0.25);">Ambernath, Maharashtra · fromtilak@gmail.com</p>
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     JS — Mobile nav + scroll-triggered animations
+============================================================ -->
+<script>
+  function toggleNav() {
+    const links = document.getElementById('navLinks');
+    links.classList.toggle('open');
+  }
+
+  // Close nav on link click (mobile)
+  document.querySelectorAll('#navLinks a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+
+  // Scroll-reveal for sections below the fold
+  const revealEls = document.querySelectorAll(
+    '.service-card, .stat-card, .credential, .process-step, .about-feat, .pricing-card, .trust-metric, .contact-channel, .proof-item'
+  );
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = `fadeUp 0.6s ${i * 0.06}s ease forwards`;
+        entry.target.style.opacity = '0';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealEls.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
