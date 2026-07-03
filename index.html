@@ -543,7 +543,7 @@
         }
 
         blogGrid.innerHTML=published.map((post,index)=>`
-          <article class="blog-card reveal">
+  			<article class="blog-card">
             <div class="blog-meta"><span>${escapeHtml(post.date||"")}</span><span>${escapeHtml(post.category||"Article")}</span></div>
             <h3 class="card-title">${escapeHtml(post.title)}</h3>
             <p class="card-text">${escapeHtml(post.excerpt||"")}</p>
