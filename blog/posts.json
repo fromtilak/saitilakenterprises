@@ -6,5 +6,21 @@
     "excerpt": "A simple checklist for sellers before listing products online.",
     "file": "blog/posts/amazon-listing-preparation.md",
     "published": true
+  },
+  {
+    "title": "How I price Amazon listings",
+    "date": "2026-07-03",
+    "category": "eCommerce",
+    "excerpt": "My pricing details for Amazon listings projects.",
+    "file": "blog/posts/how-i-price-amazon-listing-work.md",
+    "published": true
+  },
+  {
+    "title": "Starting a Shopify store in India",
+    "date": "2026-07-03",
+    "category": "eCommerce",
+    "excerpt": "A guide on starting a Shopify store in India.",
+    "file": "blog/posts/starting-a-shopify-store-in-india.md",
+    "published": true
   }
 ]
