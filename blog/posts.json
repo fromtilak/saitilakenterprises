@@ -1,26 +1,18 @@
 [
   {
-    "title": "How to Prepare Product Details Before Creating an Amazon Listing",
-    "date": "2026-07-03",
-    "category": "eCommerce",
-    "excerpt": "A simple checklist for sellers before listing products online.",
-    "file": "blog/posts/amazon-listing-preparation.md",
-    "published": true
+    "slug": "how-i-price-amazon-listing-work",
+    "title": "How I Actually Price Amazon Listing Work",
+    "date": "2026-06-20",
+    "tag": "eCommerce",
+    "excerpt": "A straight answer to the question I get most from new sellers: why does one listing cost ₹500 and another cost ₹2,000?",
+    "file": "posts/how-i-price-amazon-listing-work.md"
   },
   {
-    "title": "How I price Amazon listings",
-    "date": "2026-07-03",
-    "category": "eCommerce",
-    "excerpt": "My pricing details for Amazon listings projects.",
-    "file": "blog/posts/how-i-price-amazon-listing-work.md",
-    "published": true
-  },
-  {
-    "title": "Starting a Shopify store in India",
-    "date": "2026-07-03",
-    "category": "eCommerce",
-    "excerpt": "A guide on starting a Shopify store in India.",
-    "file": "blog/posts/starting-a-shopify-store-in-india.md",
-    "published": true
+    "slug": "starting-a-shopify-store-in-india",
+    "title": "What I Learned Starting a Shopify Store in India",
+    "date": "2026-06-05",
+    "tag": "Building",
+    "excerpt": "Payments, shipping, and the mistakes I made setting up NavPeth — written down so you don't have to make the same ones.",
+    "file": "posts/starting-a-shopify-store-in-india.md"
   }
 ]
